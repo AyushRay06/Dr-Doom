@@ -1,10 +1,8 @@
-//need to fix the markdown of code generation in <ReactMarkdown> tag
-
 "use client"
 import axios from "axios"
 import * as z from "zod"
 import Heading from "@/components/heading"
-import { Code2 } from "lucide-react"
+import { Image, MessageSquare } from "lucide-react"
 import { useForm } from "react-hook-form"
 
 import { formSchema } from "./constants"
@@ -14,24 +12,23 @@ import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import { useRouter } from "next/navigation"
 import { useState } from "react"
-import { ChatCompletionMessageParam } from "openai/resources/chat/completions"
+
 import OpenAI from "openai"
 import { Empty } from "@/components/empty"
 import { Loader } from "@/components/loader"
 import { cn } from "@/lib/utils"
 import { UserAvatar } from "@/components/user-avatar"
 import { BotAvatar } from "@/components/bat-avatar"
-
-//helps in give the generated code a proper structure
-import ReactMarkdown from "react-markdown"
-
-const Code = () => {
+const ImagePage = () => {
   const router = useRouter()
-  const [messages, setMessages] = useState<ChatCompletionMessageParam[]>([])
+  const [images, setImages] = useState<string[]>([])
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       prompt: "",
+      amount: "1",
+      resolution: "512x512",
     },
   })
 
@@ -39,16 +36,9 @@ const Code = () => {
 
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     try {
-      const userMessage: OpenAI.Chat.ChatCompletionMessageParam = {
-        role: "user",
-        content: values.prompt,
-      }
-      const newMessages = [...messages, userMessage]
-      const response = await axios.post("/api/code", {
-        messages: newMessages,
-      })
-
-      setMessages((current) => [...current, userMessage, response.data])
+      setImages([])
+      const response = await axios.post("/api/image", values)
+      const urls = response.data.map((image: { url: string }) => image.url)
       form.reset()
     } catch (error: any) {
       //TODO open pro model
@@ -61,11 +51,11 @@ const Code = () => {
   return (
     <div>
       <Heading
-        title="Code Generation"
-        description="I can be your J.A.R.V.I.S. but for code."
-        icon={Code2}
-        iconColor="text-green-500"
-        bgColor="bg-green-500/10"
+        title="Image Generation"
+        description="What you what me to Vizual-eyes."
+        icon={Image}
+        iconColor="text-pink-500"
+        bgColor="bg-pink-500/10"
       />
       <div className="px-4 lg:px-8">
         <Form {...form}>
@@ -81,7 +71,7 @@ const Code = () => {
                     <Input
                       className="border-0 outline-none focus-visible:ring-0 focus-within:right-transparent"
                       disabled={isLoading}
-                      placeholder="Write a website in Next.js"
+                      placeholder="How to get a six pack abs."
                       {...field}
                     />
                   </FormControl>
@@ -99,36 +89,17 @@ const Code = () => {
       </div>
       <div className="space-y-4 mt-4">
         {isLoading && (
-          <div className="p-8 rounded-lg w-full flex items-center justify-center bg-muted">
+          <div className="p-20">
             <Loader />
           </div>
         )}
-        {messages.length === 0 && !isLoading && (
-          <Empty label="No Code generated." />
+        {images.length === 0 && !isLoading && (
+          <Empty label="No images generated" />
         )}
-        <div className="flex flex-col-reverse gap-y-4 ">
-          {messages.map((message, index) => (
-            <div
-              key={index}
-              className={cn(
-                "p-8 w-full flex items-start gap-x-8 rounded-lg",
-                message.role === "user"
-                  ? "bg-white border border-black/10"
-                  : "bg-muted"
-              )}
-            >
-              {message.role === "user" ? <UserAvatar /> : <BotAvatar />}
-              <ReactMarkdown>
-                {typeof message.content === "string"
-                  ? message.content
-                  : "Unsupported content format" || ""}
-              </ReactMarkdown>
-            </div>
-          ))}
-        </div>
+        <div>Images</div>
       </div>
     </div>
   )
 }
 
-export default Code
+export default ImagePage
