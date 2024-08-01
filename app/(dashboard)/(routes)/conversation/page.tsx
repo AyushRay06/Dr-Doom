@@ -17,6 +17,7 @@ import OpenAI from "openai"
 import { Empty } from "@/components/empty"
 import { Loader } from "@/components/loader"
 import { cn } from "@/lib/utils"
+import { UserAvatar } from "@/components/user-avatar"
 const Conversation = () => {
   const router = useRouter()
   const [messages, setMessages] = useState<ChatCompletionMessageParam[]>([])
