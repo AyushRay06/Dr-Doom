@@ -18,6 +18,7 @@ import { Empty } from "@/components/empty"
 import { Loader } from "@/components/loader"
 import { cn } from "@/lib/utils"
 import { UserAvatar } from "@/components/user-avatar"
+import { BotAvatar } from "@/components/bat-avatar"
 const Conversation = () => {
   const router = useRouter()
   const [messages, setMessages] = useState<ChatCompletionMessageParam[]>([])
@@ -110,9 +111,12 @@ const Conversation = () => {
                   : "bg-muted"
               )}
             >
-              {typeof message.content === "string"
-                ? message.content
-                : "Unsupported content format"}
+              {message.role === "user" ? <UserAvatar /> : <BotAvatar />}
+              <p className="text-sm">
+                {typeof message.content === "string"
+                  ? message.content
+                  : "Unsupported content format"}
+              </p>
             </div>
           ))}
         </div>
