@@ -89,7 +89,9 @@ const Conversation = () => {
         </Form>
       </div>
       <div className="space-y-4 mt-4">
-        {messages.length === 0 && !isLoading && <Empty />}
+        {messages.length === 0 && !isLoading && (
+          <Empty label="No Conversation Started" />
+        )}
         <div className="flex flex-col-reverse gap-y-4 ">
           {messages.map((message, index) => (
             <div key={index}>
