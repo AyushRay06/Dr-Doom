@@ -1,4 +1,11 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+const nextConfig = {
+  images: {
+    domains: [
+      //todo
+      //      "whatever the hostnamein the error message",
+    ],
+  },
+}
 
-export default nextConfig;
+export default nextConfig
