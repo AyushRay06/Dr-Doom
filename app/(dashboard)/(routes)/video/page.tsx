@@ -15,8 +15,10 @@ import { useState } from "react"
 
 import { Empty } from "@/components/empty"
 import { Loader } from "@/components/loader"
+import { useProModal } from "@/hooks/use-pro-model"
 
 const VideoPage = () => {
+  const proModal = useProModal()
   const router = useRouter()
   const [video, setVideo] = useState<string>()
   const form = useForm<z.infer<typeof formSchema>>({
@@ -37,8 +39,9 @@ const VideoPage = () => {
 
       form.reset()
     } catch (error: any) {
-      //TODO open pro model
-      console.log(error)
+      if (error?.response?.status === 403) {
+        proModal.onOpen()
+      }
     } finally {
       router.refresh()
     }

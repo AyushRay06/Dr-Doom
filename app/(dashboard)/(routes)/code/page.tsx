@@ -24,9 +24,11 @@ import { BotAvatar } from "@/components/bat-avatar"
 
 //helps in give the generated code a proper structure
 import ReactMarkdown from "react-markdown"
+import { useProModal } from "@/hooks/use-pro-model"
 
 const Code = () => {
   const router = useRouter()
+  const proModal = useProModal()
   const [messages, setMessages] = useState<ChatCompletionMessageParam[]>([])
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -51,8 +53,9 @@ const Code = () => {
       setMessages((current) => [...current, userMessage, response.data])
       form.reset()
     } catch (error: any) {
-      //TODO open pro model
-      console.log(error)
+      if (error?.response?.status === 403) {
+        proModal.onOpen()
+      }
     } finally {
       router.refresh()
     }

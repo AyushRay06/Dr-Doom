@@ -19,8 +19,10 @@ import { Loader } from "@/components/loader"
 import { cn } from "@/lib/utils"
 import { UserAvatar } from "@/components/user-avatar"
 import { BotAvatar } from "@/components/bat-avatar"
+import { useProModal } from "@/hooks/use-pro-model"
 const Conversation = () => {
   const router = useRouter()
+  const proModal = useProModal()
   const [messages, setMessages] = useState<ChatCompletionMessageParam[]>([])
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -45,8 +47,11 @@ const Conversation = () => {
       setMessages((current) => [...current, userMessage, response.data])
       form.reset()
     } catch (error: any) {
-      //TODO open pro model
-      console.log(error)
+      //LOGIC IF USERS FREE TRIAL ENDS AND THE BACKEND THROW A 403 ERROR(we have set the error code for free trial end 403)
+      //THE PRP MODAL WILL SET TO BE TRUE HENCE APOPUP WILL APPEAR
+      if (error?.response?.status === 403) {
+        proModal.onOpen()
+      }
     } finally {
       router.refresh()
     }
