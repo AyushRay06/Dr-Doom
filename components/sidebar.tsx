@@ -14,6 +14,7 @@ import {
   VideoIcon,
 } from "lucide-react"
 import { usePathname } from "next/navigation"
+import { FreeCounter } from "./free-counter"
 
 const montserrat = Montserrat({ weight: "600", subsets: ["latin"] })
 
@@ -61,7 +62,12 @@ const route = [
     color: "text-yellow-500",
   },
 ]
-export const Sidebar = () => {
+
+interface SidebarProps {
+  apiLimitCount: number
+}
+
+export const Sidebar = ({ apiLimitCount = 0 }: SidebarProps) => {
   const pathname = usePathname()
   return (
     <div className="space-y-4 py-4 flex flex-col h-full bg-[#111827] text-white">
@@ -94,6 +100,7 @@ export const Sidebar = () => {
           ))}
         </div>
       </div>
+      <FreeCounter apiLimitCount={apiLimitCount} />
     </div>
   )
 }
