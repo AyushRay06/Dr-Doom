@@ -34,7 +34,7 @@ export const FreeCounter = ({ apiLimitCount = 0 }: FreeCounterProps) => {
               value={(apiLimitCount / MAX_FREE_COUNTS) * 100}
             />
           </div>
-          <Button variant="gradient" className="w-full ">
+          <Button variant="glow" className="w-full ">
             Upgrade
             <RocketIcon className="ml-2" />
           </Button>
