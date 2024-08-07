@@ -83,7 +83,7 @@ const SkeletonOne = () => {
         <div className="w-full bg-gray-100 h-4 rounded-full dark:bg-neutral-900" />
       </motion.div>
     </motion.div>
-  )
+  ) 
 }
 const SkeletonTwo = () => {
   const variants = {
@@ -158,7 +158,7 @@ const SkeletonFour = () => {
   const first = {
     initial: {
       x: 20,
-      rotate: -5,
+      rotate: -10,
     },
     hover: {
       x: 0,
@@ -168,7 +168,7 @@ const SkeletonFour = () => {
   const second = {
     initial: {
       x: -20,
-      rotate: 5,
+      rotate: 10,
     },
     hover: {
       x: 0,
@@ -184,53 +184,53 @@ const SkeletonFour = () => {
     >
       <motion.div
         variants={first}
-        className="h-full w-1/3 rounded-2xl bg-white p-4 dark:bg-black dark:border-white/[0.1] border border-neutral-200 flex flex-col items-center justify-center"
+        className="h-full w-1/3 rounded-2xl bg-zinc-200 p-4 dark:bg-black dark:border-white/[0.1] border border-neutral-200 flex flex-col items-center justify-center"
       >
         <Image
-          src="/image-gen.webp"
+          src="/image.jpeg"
           alt="avatar"
           height="100"
           width="100"
           className="rounded-full h-10 w-10"
         />
-        <p className="sm:text-sm text-xs text-center font-semibold text-neutral-500 mt-4">
-          Image generation
+        <p className="sm:text-sm text-xs text-center font-semibold text-neutral-700 mt-4">
+          We have our own Pablo Picasso for Image generation.
         </p>
         <p className="border border-red-500 bg-red-100 dark:bg-red-900/20 text-red-600 text-xs rounded-full px-2 py-0.5 mt-4">
-          Delusional
+          Image Generation
         </p>
       </motion.div>
       <motion.div className="h-full relative z-20 w-1/3 rounded-2xl bg-white p-4 dark:bg-black dark:border-white/[0.1] border border-neutral-200 flex flex-col items-center justify-center">
         <Image
-          src="/logo.png"
+          src="/video.jpg"
           alt="avatar"
           height="100"
           width="100"
           className="rounded-full h-10 w-10"
         />
-        <p className="sm:text-sm text-xs text-center font-semibold text-neutral-500 mt-4">
-          Tailwind CSS is cool, you know
+        <p className="sm:text-sm text-xs text-center font-semibold text-neutral-700 mt-4">
+          Video Generation so cool as if it was directed by Christopher Nolan.
         </p>
         <p className="border border-green-500 bg-green-100 dark:bg-green-900/20 text-green-600 text-xs rounded-full px-2 py-0.5 mt-4">
-          Sensible
+          Video Generation
         </p>
       </motion.div>
       <motion.div
         variants={second}
-        className="h-full w-1/3 rounded-2xl bg-white p-4 dark:bg-black dark:border-white/[0.1] border border-neutral-200 flex flex-col items-center justify-center"
+        className="h-full w-1/3 rounded-2xl bg-zinc-200 p-4 dark:bg-black dark:border-white/[0.1] border border-neutral-200 flex flex-col items-center justify-center"
       >
         <Image
-          src="/logo.png"
+          src="/music.jpeg"
           alt="avatar"
           height="100"
           width="100"
           className="rounded-full h-10 w-10"
         />
-        <p className="sm:text-sm text-xs text-center font-semibold text-neutral-500 mt-4">
-          I love angular, RSC, and Redux.
+        <p className="sm:text-sm text-xs text-center font-semibold text-neutral-700 mt-4">
+          Metro Boomin on the drums. #Music Generation
         </p>
         <p className="border border-orange-500 bg-orange-100 dark:bg-orange-900/20 text-orange-600 text-xs rounded-full px-2 py-0.5 mt-4">
-          Helpless
+          Music Generation
         </p>
       </motion.div>
     </motion.div>
@@ -280,15 +280,16 @@ const SkeletonFive = () => {
           className="rounded-full h-10 w-10"
         />
         <p className="text-xs text-neutral-500">
-          There are a lot of cool framerworks out there like React, Angular,
-          Vue, Svelte that can make your life ....
+          Hello! It looks like there might be an issue with your API key.
+          Regenerate your key from the dashboard and try againI'll be happy to
+          assist further.
         </p>
       </motion.div>
       <motion.div
         variants={variantsSecond}
         className="flex flex-row rounded-full border border-neutral-100 dark:border-white/[0.2] p-2 items-center justify-end space-x-2 w-3/4 ml-auto bg-white dark:bg-black"
       >
-        <p className="text-xs text-neutral-500">Use PHP.</p>
+        <p className="text-xs text-neutral-500">Thanks.</p>
         <div className="h-6 w-6 rounded-full bg-gradient-to-r from-pink-500 to-violet-500 flex-shrink-0" />
       </motion.div>
     </motion.div>
@@ -327,7 +328,7 @@ const items = [
     className: "md:col-span-1",
   },
   {
-    title: "Contextual Suggestions",
+    title: "Modern userfriendly UI",
     description: (
       <span className="text-sm">
         Get AI-powered suggestions based on your writing context.
@@ -338,10 +339,10 @@ const items = [
     icon: <IconSignature className="h-4 w-4 text-neutral-500" />,
   },
   {
-    title: "Sentiment Analysis",
+    title: "Features",
     description: (
       <span className="text-sm">
-        Understand the sentiment of your text with AI analysis.
+        All that you can create with AI at a one stop website.
       </span>
     ),
     header: <SkeletonFour />,
@@ -350,10 +351,10 @@ const items = [
   },
 
   {
-    title: "Text Summarization",
+    title: "Chat Support",
     description: (
       <span className="text-sm">
-        Summarize your lengthy documents with AI technology.
+        If you face any issue with the software we also have customer support.
       </span>
     ),
     header: <SkeletonFive />,
