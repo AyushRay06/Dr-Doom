@@ -83,7 +83,7 @@ const SkeletonOne = () => {
         <div className="w-full bg-gray-100 h-4 rounded-full dark:bg-neutral-900" />
       </motion.div>
     </motion.div>
-  ) 
+  )
 }
 const SkeletonTwo = () => {
   const variants = {
@@ -281,8 +281,8 @@ const SkeletonFive = () => {
         />
         <p className="text-xs text-neutral-500">
           Hello! It looks like there might be an issue with your API key.
-          Regenerate your key from the dashboard and try againI'll be happy to
-          assist further.
+          Regenerate your key from the dashboard and try again I will be happy
+          to assist further.
         </p>
       </motion.div>
       <motion.div

@@ -7,7 +7,7 @@ export const Footer = () => {
     <footer className="bg-zinc-900 rounded-lg shadow m-4 dark:bg-gray-800 pt-2 ">
       <div className="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
         <span className="text-sm text-gray-500 sm:text-start dark:text-gray-400">
-          Who's to Blame? Yep, you guessed it this entire website is the
+          Who is to Blame? Yep, you guessed it this entire website is the
           brainchild of Ayush. If you love it, awesome! If not, well, you know
           who to blame.Connect with Ayush on for more of this creative genius.
         </span>
