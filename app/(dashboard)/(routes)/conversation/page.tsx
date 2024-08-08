@@ -20,6 +20,7 @@ import { cn } from "@/lib/utils"
 import { UserAvatar } from "@/components/user-avatar"
 import { BotAvatar } from "@/components/bat-avatar"
 import { useProModal } from "@/hooks/use-pro-model"
+import toast from "react-hot-toast"
 const Conversation = () => {
   const router = useRouter()
   const proModal = useProModal()
@@ -51,6 +52,8 @@ const Conversation = () => {
       //THE PRP MODAL WILL SET TO BE TRUE HENCE APOPUP WILL APPEAR
       if (error?.response?.status === 403) {
         proModal.onOpen()
+      } else {
+        toast.error("Something went wrong")
       }
     } finally {
       router.refresh()
