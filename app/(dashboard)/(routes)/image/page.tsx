@@ -66,7 +66,7 @@ const ImagePage = () => {
     <div>
       <Heading
         title="Image Generation"
-        description="What you what me to Vizual-eyes."
+        description="Turn your prompt into Image"
         icon={ImageIcon}
         iconColor="text-pink-500"
         bgColor="bg-pink-500/10"
@@ -165,7 +165,7 @@ const ImagePage = () => {
           </div>
         )}
         {images.length === 0 && !isLoading && (
-          <Empty label="No images generated" />
+          <Empty label="No image generated" />
         )}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mt-8">
           {images.map((src) => (

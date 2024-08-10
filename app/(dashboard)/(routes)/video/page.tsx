@@ -73,7 +73,7 @@ const VideoPage = () => {
                     <Input
                       className="border-0 outline-none focus-visible:ring-0 focus-within:right-transparent"
                       disabled={isLoading}
-                      placeholder="Tiger in a jungle."
+                      placeholder="RCB winning IPL, Virat Kohli celebrating."
                       {...field}
                     />
                   </FormControl>

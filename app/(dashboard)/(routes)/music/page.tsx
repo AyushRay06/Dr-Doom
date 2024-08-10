@@ -55,7 +55,7 @@ const MusicPage = () => {
     <div>
       <Heading
         title="Music Generation"
-        description="I can be your Weekend and ColdPlay at The same time."
+        description="Turn your prompt into music."
         icon={Music}
         iconColor="text-emerald-500"
         bgColor="bg-emerald-500/10"
@@ -74,7 +74,7 @@ const MusicPage = () => {
                     <Input
                       className="border-0 outline-none focus-visible:ring-0 focus-within:right-transparent"
                       disabled={isLoading}
-                      placeholder="Guiter solo."
+                      placeholder="Drake singing Not Like Us."
                       {...field}
                     />
                   </FormControl>

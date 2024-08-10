@@ -64,7 +64,7 @@ const Conversation = () => {
     <div>
       <Heading
         title="Conversation"
-        description="Ask me anything you want answers for."
+        description="Ask me anything."
         icon={MessageSquare}
         iconColor="text-violet-500"
         bgColor="bg-violet-500/10"
@@ -83,7 +83,7 @@ const Conversation = () => {
                     <Input
                       className="border-0 outline-none focus-visible:ring-0 focus-within:right-transparent"
                       disabled={isLoading}
-                      placeholder="How to get a six pack abs."
+                      placeholder="Why was Thor crying?"
                       {...field}
                     />
                   </FormControl>

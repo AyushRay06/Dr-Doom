@@ -68,7 +68,7 @@ const Code = () => {
     <div>
       <Heading
         title="Code Generation"
-        description="I can be your J.A.R.V.I.S. but for code."
+        description="Turn your promt into code."
         icon={Code2}
         iconColor="text-green-500"
         bgColor="bg-green-500/10"
