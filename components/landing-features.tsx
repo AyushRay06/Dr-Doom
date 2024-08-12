@@ -194,7 +194,7 @@ const SkeletonFour = () => {
           className="rounded-full h-10 w-10"
         />
         <p className="sm:text-sm text-xs text-center font-semibold text-neutral-700 mt-4">
-          We have our own Pablo Picasso for Image generation.
+          For image generation, we have our own Pablo Picasso..
         </p>
         <p className="border border-red-500 bg-red-100 dark:bg-red-900/20 text-red-600 text-xs rounded-full px-2 py-0.5 mt-4">
           Image Generation
@@ -209,7 +209,8 @@ const SkeletonFour = () => {
           className="rounded-full h-10 w-10"
         />
         <p className="sm:text-sm text-xs text-center font-semibold text-neutral-700 mt-4">
-          Video Generation so cool as if it was directed by Christopher Nolan.
+          Video Generation looks so good that Christopher Nolan could have
+          directed it.
         </p>
         <p className="border border-green-500 bg-green-100 dark:bg-green-900/20 text-green-600 text-xs rounded-full px-2 py-0.5 mt-4">
           Video Generation
@@ -227,7 +228,7 @@ const SkeletonFour = () => {
           className="rounded-full h-10 w-10"
         />
         <p className="sm:text-sm text-xs text-center font-semibold text-neutral-700 mt-4">
-          Metro Boomin on the drums. #Music Generation
+          Metro, shut your h*e a$$ up and make some drums. #Music Generation
         </p>
         <p className="border border-orange-500 bg-orange-100 dark:bg-orange-900/20 text-orange-600 text-xs rounded-full px-2 py-0.5 mt-4">
           Music Generation
