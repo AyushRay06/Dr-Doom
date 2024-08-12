@@ -310,11 +310,7 @@ const items = [
   },
   {
     title: "Code Generation",
-    description: (
-      <span className="text-sm">
-        Let FRIDAY be your Robin when programming.
-      </span>
-    ),
+    description: <span className="text-sm"></span>,
 
     //code generation
     header: (
