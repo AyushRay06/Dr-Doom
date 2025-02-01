@@ -1,6 +1,6 @@
-# SaaS Application - AI Content Generator
+# Dr Doom - AI Content Generator
 
-This is a SaaS application that allows users to generate images, music, videos, and code, with the added feature of a chatbot that answers queries. The application leverages the OpenAI API and Replicate AI for content generation. Integrated customer support is powered by Crisp, and user authentication is handled using Clerk.
+This SaaS application allows users to generate images, music, videos, and code. It also features a chatbot that answers queries. The application leverages the OpenAI API and Replicate AI for content generation. Crisp powers integrated customer support, and Clerk handles user authentication.
 
 ## Features
 - **Content Generation**: Generate images, music, videos, and code using the power of OpenAI and Replicate AI APIs.
